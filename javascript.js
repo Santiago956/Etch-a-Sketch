@@ -30,7 +30,7 @@ newGrid();
 
 document.getElementById("reset").addEventListener("click", () => {
   let size = parseInt(prompt("Grid size? (max 100)"));
-  if (size < 100 && size <= 0 && !isNaN(size)) {
+  if (!isNaN(size) && size < 100 && size > 0) {
     newGrid(size);
   } else {
     alert("Enter a number between 1 and 100");
