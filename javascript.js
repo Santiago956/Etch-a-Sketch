@@ -12,8 +12,14 @@ function newGrid(size = 16) {
     block.style.width = `${squareSize}px`;
     block.style.height = `${squareSize}px`;
 
+    block.opacityLevel = 0;
+
     block.addEventListener("mouseover", () => {
-      block.style.backgroundColor = "black";
+      randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      block.style.backgroundColor = "#" + randomColor;
+
+      block.opacityLevel = Math.min(block.opacityLevel + 0.1, 1);
+      block.style.opacity = block.opacityLevel;
     });
 
     container.appendChild(block);
